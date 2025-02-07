@@ -2,17 +2,17 @@ import type { BCMSEntryContentParsed } from '../content';
 import type { BCMSEntryStatuses } from '../status';
 import type { PropRichTextDataParsed } from '@thebcms/types';
 
-export interface NewsUpdatesEntryMetaItem {
+export interface NewsEntryMetaItem {
     title: string;
     slug: string;
     body: PropRichTextDataParsed;
 }
 
-export interface NewsUpdatesEntryMeta {
-    en?: NewsUpdatesEntryMetaItem;
+export interface NewsEntryMeta {
+    en?: NewsEntryMetaItem;
 }
 
-export interface NewsUpdatesEntry {
+export interface NewsEntry {
     _id: string;
     createdAt: number;
     updatedAt: number;
@@ -20,6 +20,6 @@ export interface NewsUpdatesEntry {
     templateId: string;
     userId: string;
     statuses: BCMSEntryStatuses;
-    meta: NewsUpdatesEntryMeta;
+    meta: NewsEntryMeta;
     content: BCMSEntryContentParsed;
 }

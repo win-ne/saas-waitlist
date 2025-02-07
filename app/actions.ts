@@ -1,10 +1,10 @@
 "use server"
 
 import { bcms } from "@/app/lib/bcms"
-import { NewsUpdatesEntry } from "@/bcms/types/ts"
+import { NewsEntry } from "@/bcms/types/ts"
 
 const fetchUpdates = async () => {
-    return (await bcms.entry.getAll("news-update")) as NewsUpdatesEntry[]
+    return (await bcms.entry.getAll("news")) as NewsEntry[]
 }
 
 const createCustomer = (customer: { email: string, name: string }) => {
