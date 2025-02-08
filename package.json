@@ -6,7 +6,8 @@
     "dev": "bcms --pull types --lng ts && next dev",
     "build": "bcms --pull types --lng ts && next build",
     "start": "bcms --pull types --lng ts && next start",
-    "lint": "bcms --pull types --lng ts && next lint"
+    "lint": "bcms --pull types --lng ts && next lint",
+    "gen-bcms-config": "node gen-bcms-config.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",
