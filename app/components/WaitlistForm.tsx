@@ -1,6 +1,6 @@
 "use client"
 
-import { ErrorMessage, Field, Form, Formik } from "formik"
+import { Field, Form, Formik } from "formik"
 import clsx from "clsx"
 import { Button } from "@headlessui/react"
 import { createCustomer } from "@/app/actions"
@@ -35,6 +35,8 @@ const WaitlistForm = () => {
                 }).catch(() => {
                     setSubmitError("There was a problem adding you to the waitlist.")
                 })
+            } else {
+                setSubmitError("There was a problem with the name or email you entered. Please try again")
             }
         }}
     >
@@ -67,14 +69,14 @@ const WaitlistForm = () => {
                     Join the waitlist!
                 </Button>
                 <div className="text-gray-500 max-w-[300px] my-3 mx-auto">
-                    For any queries, reach out to use on social media!
+                    For any queries, reach out to us on social media!
                 </div>
                 <div className={`font-light bg-red-500/10 bg-red-700/25 rounded-lg w-100 px-3 py-1 m-1 justify-between flex ${submitError ? "flex" : "hidden"}`}>
                     <div>{submitError}</div>
                     <Button className="ms-3" onClick={() => setSubmitError("")}>𝗫</Button>
                 </div>
                 <div className={`font-light bg-green-500/10 bg-green-700/25 rounded-lg w-100 py-1 px-3 m-1 justify-between ${success ? "flex" : "hidden"}`}>
-                    <div>You've successfully signed up to the waitlist.</div>
+                    <div>You've successfully signed up for the waitlist.</div>
                     <Button className="ms-3" onClick={() => setSuccess(false)}>𝗫</Button>
                 </div>
             </Form>
