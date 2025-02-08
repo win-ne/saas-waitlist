@@ -32,6 +32,7 @@ const WaitlistForm = () => {
             if (!errors.name && !errors.email) {
                 createCustomer(values).then(() => {
                     setSuccess(true)
+                    formikBag.resetForm()
                 }).catch(() => {
                     setSubmitError("There was a problem adding you to the waitlist.")
                 })
