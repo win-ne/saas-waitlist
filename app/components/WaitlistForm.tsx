@@ -77,7 +77,7 @@ const WaitlistForm = () => {
                     <Button className="ms-3" onClick={() => setSubmitError("")}>𝗫</Button>
                 </div>
                 <div className={`font-light bg-green-500/10 bg-green-700/25 rounded-lg w-100 py-1 px-3 m-1 justify-between ${success ? "flex" : "hidden"}`}>
-                    <div>You've successfully signed up for the waitlist.</div>
+                    <div>You&apos;ve successfully signed up for the waitlist.</div>
                     <Button className="ms-3" onClick={() => setSuccess(false)}>𝗫</Button>
                 </div>
             </Form>
