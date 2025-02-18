@@ -3,10 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "bcms --pull types --lng ts && next dev",
-    "build": "bcms --pull types --lng ts && next build",
-    "start": "bcms --pull types --lng ts && next start",
-    "lint": "bcms --pull types --lng ts && next lint",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "bcms-dev": "bcms --pull types --lng ts && next dev",
+    "bcms-build": "bcms --pull types --lng ts && next build",
+    "bcms-start": "bcms --pull types --lng ts && next start",
+    "bcms-lint": "bcms --pull types --lng ts && next lint",
     "gen-bcms-config": "node gen-bcms-config.js"
   },
   "dependencies": {
