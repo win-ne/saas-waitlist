@@ -1,8 +1,10 @@
 import Image from "next/image"
-import WaitlistForm from "./components/WaitlistForm"
-import UpdateList from "./components/UpdatesList"
+import WaitlistForm from "@/app/components/WaitlistForm"
+import { fetchNews } from "@/app/actions"
 
-export default function Home() {
+export default async function Home() {
+  const news = await fetchNews()
+
   return (
     <div
       className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20"
@@ -22,7 +24,23 @@ export default function Home() {
         <h1 className="text-3xl mb-4 max-w-[600px]">Your personal AI tutor is ready 24/7 to help you practice, perfect, and progress.</h1>
         <p className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and recieve updates on the progress!</p>
         <WaitlistForm />
-        <UpdateList />
+        <div className="flex flex-col max-w-[600px] items-center gap-4">
+          <h1 className="text-3xl mt-4 max-w-[600px]">Updates</h1>
+          <p className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and receive updates on the progress!</p>
+          {news.map((item, index) => {
+            return <div key={`update-${index}`} className="bg-white/10 border border-white/15 p-4 rounded-2xl mb-2 text-start">
+              <span className="flex w-100 justify-between">
+                <p className="text-orange-500">{item.meta.en?.title}</p>
+                <p className="text-orange-500 text-xs">{(new Date(item.updatedAt)).toLocaleDateString()}</p>
+              </span>
+              <span className="text-gray-300">
+                {item.meta.en?.body.nodes.map((node, index) => (
+                  <div key={index} dangerouslySetInnerHTML={{ __html: node.value }} />
+                ))}
+              </span>
+            </div>
+          })}
+        </div>
       </main>
     </div>
   )

@@ -3,7 +3,7 @@
 import { bcms } from "@/app/lib/bcms"
 import { NewsEntry } from "@/bcms/types/ts"
 
-const fetchUpdates = async () => {
+const fetchNews = async () => {
     return (await bcms.entry.getAll("news")) as NewsEntry[]
 }
 
@@ -15,4 +15,4 @@ const createCustomer = (customer: { email: string, name: string }) => {
     })
 }
 
-export { fetchUpdates, createCustomer }
+export { fetchNews, createCustomer }
