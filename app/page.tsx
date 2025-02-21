@@ -21,12 +21,12 @@ export default async function Home() {
           className="rounded-full p-4 bg-orange-500"
         />
         <h1 className="text-orange-500 text-4xl  mb-4">Lingua Mate</h1>
-        <h1 className="text-3xl mb-4 max-w-[600px]">Your personal AI tutor is ready 24/7 to help you practice, perfect, and progress.</h1>
-        <p className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and recieve updates on the progress!</p>
+        <h2 className="text-3xl mb-4 max-w-[600px]">Your personal AI tutor is ready 24/7 to help you practice, perfect, and progress.</h2>
+        <h6 className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and recieve updates on the progress!</h6>
         <WaitlistForm />
         <div className="flex flex-col max-w-[600px] items-center gap-4">
-          <h1 className="text-3xl mt-4 max-w-[600px]">Updates</h1>
-          <p className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and receive updates on the progress!</p>
+          <h2 className="text-3xl mt-4 max-w-[600px]">Updates</h2>
+          <h6 className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and receive updates on the progress!</h6>
           {news.map((item, index) => {
             return <div key={`update-${index}`} className="bg-white/10 border border-white/15 p-4 rounded-2xl mb-2 text-start">
               <span className="flex w-100 justify-between">
