@@ -22,7 +22,7 @@ export default async function Home() {
         />
         <h1 className="text-orange-500 text-4xl  mb-4">Lingua Mate</h1>
         <h2 className="text-3xl mb-4 max-w-[600px]">Your personal AI tutor is ready 24/7 to help you practice, perfect, and progress.</h2>
-        <h6 className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and recieve updates on the progress!</h6>
+        <h6 className="text-gray-500 max-w-[400px]">Join the waitlist to get early access to the product and receive updates on the progress!</h6>
         <WaitlistForm />
         <div className="flex flex-col max-w-[600px] items-center gap-4">
           <h2 className="text-3xl mt-4 max-w-[600px]">Updates</h2>
