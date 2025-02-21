@@ -43,22 +43,26 @@ const WaitlistForm = () => {
     >
         {({ errors, touched, isValid }) => (
             <Form className="flex flex-col my-3 justify-stretch max-sm:w-[300px] sm:w-[400px]">
-                <Field
-                    id="name"
-                    name="name"
-                    placeholder="Your name"
-                    className={inputStyles}
-                />
+                <label>
+                    <Field
+                        id="name"
+                        name="name"
+                        placeholder="Your name"
+                        className={inputStyles}
+                    />
+                </label>
                 <CustomError>
                     {errors.name && touched.name ? errors.name : null}
                 </CustomError>
-                <Field
-                    id="email"
-                    name="email"
-                    placeholder="Your email"
-                    type="email"
-                    className={inputStyles}
-                />
+                <label>
+                    <Field
+                        id="email"
+                        name="email"
+                        placeholder="Your email"
+                        type="email"
+                        className={inputStyles}
+                    />
+                </label>
                 <CustomError>
                     {errors.email && touched.email ? errors.email : null}
                 </CustomError>
