@@ -1,6 +1,7 @@
 import Image from "next/image"
 import WaitlistForm from "@/app/components/WaitlistForm"
 import { fetchNews } from "@/app/actions"
+import { BCMSContentManager } from "@thebcms/components-react"
 
 export default async function Home() {
   const news = await fetchNews()
@@ -34,9 +35,7 @@ export default async function Home() {
                 <p className="text-orange-500 text-xs">{(new Date(item.updatedAt)).toLocaleDateString()}</p>
               </span>
               <span className="text-gray-300">
-                {item.meta.en?.body.nodes.map((node, index) => (
-                  <div key={index} dangerouslySetInnerHTML={{ __html: node.value }} />
-                ))}
+                {item.meta.en?.body.nodes && <BCMSContentManager items={item.meta.en?.body.nodes} />}
               </span>
             </div>
           })}
